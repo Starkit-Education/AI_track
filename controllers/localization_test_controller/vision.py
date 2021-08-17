@@ -1,10 +1,12 @@
 import math
-
+import json
+ 
 class Vision():
-    def __init__(self, camera, robot):
+    def __init__(self, camera, robot, landmarks = "landmarks.json"):
         self.camera = camera
         self.robot = robot
-        self.posts = {"blue_posts": [[ 1.8, 0.4], [ 1.8, -0.4]],"yellow_posts":[[ -1.8, 0.4], [ -1.8, -0.4]]}
+        with open(landmarks, "r") as file:
+            self.posts = json.load(file)
 
 
     def get_position(self, positions):

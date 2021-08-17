@@ -12,8 +12,12 @@ camera.enable(timestep)
 camera.recognitionEnable(timestep)
 vision = Vision(camera, robot)
 
-
-while robot.step(32) != -1:
-    mesurements = vision.update()
-    localization.update(mesurements)
+while True:
+    mesurements = {}
+    for i in range(5):
+        robot.step(32)
+        mesurements = vision.update(mesurements)
+    print(mesurements)
+    #localization.update(mesurements)  
     print(localization.return_position())
+    robot.step(32)
