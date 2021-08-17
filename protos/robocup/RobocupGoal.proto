@@ -69,6 +69,7 @@ PROTO RobocupGoal [
         rotation 1 0 0 1.5708
         recognitionColors 1 1 0
         model "right post"
+        name "right post"
         #recognitionColors 1 1 0
         #model "right post"
         children [
@@ -92,6 +93,7 @@ PROTO RobocupGoal [
         rotation 1 0 0 1.5708
         recognitionColors 1 1 1
         model "left post"
+        name "left post"
         children [
           Shape {
             appearance USE POST_APP
@@ -266,8 +268,6 @@ PROTO RobocupGoal [
         Transform {
         translation %{= post_spacing / 2 }% 0 %{= post_height / 2 }%
         rotation 1 0 0 1.5708
-        #recognitionColors 1 1 1
-        #model "left post"
         children [
           Shape {
             appearance USE POST_APP
