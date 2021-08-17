@@ -1,0 +1,15 @@
+{
+    "first_measurement":{
+        "blue_posts": 
+            [[1.46021, -0.3818], [1.3299, 0.4074]]
+            },
+
+    "second_measurement":{
+        "blue_posts": 
+            [[1.46021, -0.3818], [1.3299, 0.4074]]
+        },
+    "first_answer":
+            [0.4214, -0.2145],
+    "second_aswer":
+            []
+}
