@@ -1,5 +1,6 @@
 import math
 import json
+from os import X_OK
 import random
 
 class Vision():
@@ -9,6 +10,12 @@ class Vision():
         with open(landmarks, "r") as file:
             self.posts = json.load(file)
 
+    def get_random_position(self):
+        A = 6
+        B = 4
+        x = A + 2*random.random()
+        y = B + 2*random.random()
+        return [x, y]
 
     def get_position(self, positions):
         xy_robot = self.robot.getSelf().getPosition()
@@ -46,8 +53,11 @@ class Vision():
             for obj in objects:
                 if obj.get_model().decode("utf-8") == "left post":
                     mesurements[post_color]["left post"].append(self.get_position(self.posts[post_color][0]))
+                    if random.random() < 0.2:
+                        mesurements[post_color]["left post"].append(self.get_random_position())
                 elif obj.get_model().decode("utf-8") == "right post":
                     mesurements[post_color]["right post"].append(self.get_position(self.posts[post_color][1]))
-                
+                    if random.random() < 0.2:
+                        mesurements[post_color]["right post"].append(self.get_random_position())
         return mesurements
             
