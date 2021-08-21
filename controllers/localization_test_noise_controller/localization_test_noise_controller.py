@@ -17,7 +17,6 @@ while True:
     for i in range(5):
         robot.step(32)
         mesurements = vision.update(mesurements)
-    print(mesurements)
-    #localization.update(mesurements)  
+    localization.update(mesurements)  
     print(localization.return_position())
     robot.step(32)
